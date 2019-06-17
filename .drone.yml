@@ -5,7 +5,7 @@ steps:
 - name: test
   image: node:10.16-alpine
   commands:
-    - npm install jest
+    - npm install
     - npm test
 
 - name: coverage
