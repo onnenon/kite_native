@@ -3,6 +3,7 @@
 Project for learning some React Native goodness.
 
 [![Build Status](https://cloud.drone.io/api/badges/onnenon/kite_native/status.svg)](https://cloud.drone.io/onnenon/kite_native)
+[![codecov](https://codecov.io/gh/onnenon/kite_native/branch/master/graph/badge.svg)](https://codecov.io/gh/onnenon/kite_native)
 
 ## Things
 

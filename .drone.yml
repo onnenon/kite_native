@@ -1,6 +1,18 @@
-pipeline:
-  test:
-    image: node:10.16-alpine
-    commands:
-      - npm install jest
-      - npm test
+kind: pipeline
+name: default
+
+steps:
+- name: test
+  image: node:10.16-alpine
+  commands:
+    - npm install
+    - npm install codecov -g
+    - npm test && codecov
+
+- name: coverage
+  image: plugins/codecov
+  settings:
+    token: 
+      from_secret: codecov-token
+    paths:
+      - ./coverage
