@@ -2,4 +2,5 @@ pipeline:
   test:
     image: node:10.16-alpine
     commands:
+      - npm install jest
       - npm test
