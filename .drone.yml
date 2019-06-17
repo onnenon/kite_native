@@ -6,6 +6,7 @@ steps:
   image: node:10.16-alpine
   commands:
     - npm install
+    - npm install codecov
     - npm test
 
 - name: coverage

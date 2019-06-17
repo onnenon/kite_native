@@ -26,6 +26,8 @@
     "typescript": "3.5.2"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "coverageDirectory": "./coverage/",
+    "colectCoverage": true
   }
 }
