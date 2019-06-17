@@ -7,7 +7,7 @@ steps:
   commands:
     - npm install
     - npm install codecov
-    - jest && codecov
+    - test && codecov
 
 - name: coverage
   image: plugins/codecov
