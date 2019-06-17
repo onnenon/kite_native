@@ -7,10 +7,12 @@ steps:
   commands:
     - npm install
     - npm install codecov
-    - test && codecov
+    - test
 
 - name: coverage
   image: plugins/codecov
   settings:
     token: 
       from_secret: codecov-token
+    paths:
+      - ./coverage
