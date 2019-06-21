@@ -1,1 +1,10 @@
-{}
+{
+  "ignore_dirs": [
+    ".git",
+    "__tests__",
+    "coverage",
+    "android",
+    "ios",
+    "node_modules"
+  ]
+}
