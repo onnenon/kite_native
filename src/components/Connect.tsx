@@ -3,8 +3,8 @@ import { Text, View, TextInput, Button } from "react-native";
 
 export default class Connect extends Component {
   state = {
-    host: "Hostname",
-    port: "Port"
+    host: "" as String,
+    port: 0 as Number
   };
 
   render() {
@@ -12,14 +12,14 @@ export default class Connect extends Component {
       <View>
         <Text>Enter Server Hostname or IP</Text>
         <TextInput
-          value={this.state.host}
+          placeholder="Hostname"
           onChangeText={host => this.setState({ host })}
-          clearTextOnFocus={true}
+          keyboardType={"url"}
         />
         <TextInput
-          value={this.state.port}
+          placeholder="Port Number"
           onChangeText={port => this.setState({ port })}
-          clearTextOnFocus={true}
+          keyboardType={"number-pad"}
         />
         <Button onPress={() => this.forceUpdate} title="Connect" />
       </View>
