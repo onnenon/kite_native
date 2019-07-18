@@ -11,9 +11,9 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 
-import Connect from "./src/components/Connect";
+import Connect from "./src/components/connect/Connect";
 
-interface Props {}
+interface Props { }
 export default class App extends Component<Props> {
   render() {
     return (
