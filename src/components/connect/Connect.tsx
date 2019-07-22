@@ -1,35 +1,35 @@
-import React, { Component } from "react";
-import { Text, View, TextInput, Button, StyleSheet } from "react-native";
+import React, { Component } from 'react';
+import {
+  Button,
+  StyleSheet,
+  Text,
+  TextInput,
+  View
+  } from 'react-native';
+import { string } from 'prop-types';
 
 export default class Connect extends Component {
-  state = {
-    host: String,
-    port: Number
+  public constructor(props: any) {
+    super(props);
+    this.state = {
+      host: string,
+      port: string
+    };
+  }
+
+  public updateHost = (host: string): void => {
+    this.setState({ host });
   };
 
-  public updatePort(port: string) {
-    this.setState({ port });
-  }
-
-  public updateHost(host: string) {
-    this.setState({ host });
-  }
+  public updatePort = (port: string): void => {};
 
   render() {
     return (
       <View>
         <Text style={styles.heading}>Kite</Text>
         <Text>Enter Server Hostname or IP</Text>
-        <TextInput
-          placeholder="Hostname"
-          onChangeText={host => this.updateHost(host)}
-          keyboardType={"url"}
-        />
-        <TextInput
-          placeholder="Port Number"
-          onChangeText={port => this.updatePort(port)}
-          keyboardType={"number-pad"}
-        />
+        <TextInput keyboardType={"url"} onChangeText={host => this.updateHost(host)} placeholder="Hostname" />
+        <TextInput keyboardType={"number-pad"} onChangeText={port => this.updatePort(port)} placeholder="Port Number" />
         <Button onPress={() => this.forceUpdate} title="Connect" />
       </View>
     );
