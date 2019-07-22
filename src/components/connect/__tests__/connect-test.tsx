@@ -20,12 +20,12 @@ describe("Connect", () => {
     });
 
     it.skip('should call onChange prop', () => {
-        // const event = {
-        //     preventDefault() { },
-        //     target: { value: 'onChange' }
-        // };
-        // const component = enzyme.shallow(<InputBox onSearch={onSearchMock} />);
-        // component.find('input').simulate('change', event);
-        // expect(onSearchMock).toBeCalledWith('the-value');
+        //     const event = {
+        //         preventDefault() { },
+        //         target: { value: 'onChange' }
+        //     };
+        //     const component = enzyme.shallow(<InputBox onSearch={onSearchMock} />);
+        //     component.find('input').simulate('change', event);
+        //     expect(onSearchMock).toBeCalledWith('the-value');
     });
 });

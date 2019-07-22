@@ -1,21 +1,31 @@
-import React, { Component } from "react";
-import { Text, View, TextInput, Button, StyleSheet } from "react-native";
+import React, { Component } from 'react';
+import {
+  Button,
+  StyleSheet,
+  Text,
+  TextInput,
+  View
+} from 'react-native';
+import { string } from 'prop-types';
 
 import Colors from "../../colors";
 
 export default class Connect extends Component {
-  state = {
-    host: String,
-    port: Number
+  public constructor(props: any) {
+    super(props);
+    this.state = {
+      host: string,
+      port: string
+    };
+  }
+
+  public updateHost = (host: string): void => {
+    this.setState({ host });
   };
 
-  public updatePort(port: string) {
+  public updatePort = (port: string): void => {
     this.setState({ port });
-  }
-
-  public updateHost(host: string) {
-    this.setState({ host });
-  }
+  };
 
   render() {
     return (
