@@ -10,8 +10,8 @@
     "codecov": "^3.5.0",
     "react": "16.8.3",
     "react-native": "0.59.9",
-    "realm": "^3.0.0-beta.1",
-    "redux-saga": "^1.0.3",
+    "realm": "^3.0.0-beta.2",
+    "redux-saga": "^1.0.5",
     "tslint": "^5.18.0"
   },
   "devDependencies": {
