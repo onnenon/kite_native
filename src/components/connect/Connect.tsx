@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
-import {
-  Button,
-  StyleSheet,
-  Text,
-  TextInput,
-  View
-} from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { string } from 'prop-types';
 
-import Colors from "../../colors";
+import Colors from '../../styles/colors';
 
 export default class Connect extends Component {
   public constructor(props: any) {
     super(props);
     this.state = {
       host: string,
-      port: string
+      port: string,
     };
   }
 
@@ -36,13 +30,13 @@ export default class Connect extends Component {
           style={styles.input}
           placeholder="Hostname"
           onChangeText={host => this.updateHost(host)}
-          keyboardType={"url"}
+          keyboardType={'url'}
         />
         <TextInput
           style={styles.input}
           placeholder="Port Number"
           onChangeText={port => this.updatePort(port)}
-          keyboardType={"number-pad"}
+          keyboardType={'number-pad'}
         />
         <Button onPress={() => this.forceUpdate} title="Connect" />
       </View>
@@ -53,24 +47,24 @@ export default class Connect extends Component {
 const styles = StyleSheet.create({
   body: {
     backgroundColor: Colors.darkGrey,
-    width: "60%"
+    width: '60%',
   },
   heading: {
     fontSize: 30,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     paddingBottom: 20,
-    color: Colors.offWhite
+    color: Colors.offWhite,
   },
   input: {
     borderRadius: 4,
     padding: 5,
     marginBottom: 10,
     backgroundColor: Colors.offWhite,
-    fontSize: 14
+    fontSize: 14,
   },
   info: {
     fontSize: 12,
     paddingBottom: 10,
-    color: Colors.offWhite
-  }
+    color: Colors.offWhite,
+  },
 });

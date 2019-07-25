@@ -5,9 +5,9 @@ steps:
 - name: test
   image: node:10.16-alpine
   commands:
-    - npm install
-    - npm install codecov -g
-    - npm test && codecov
+    - yarn install
+    - yarn install codecov -g
+    - yarn test && codecov
 
 - name: coverage
   image: plugins/codecov
