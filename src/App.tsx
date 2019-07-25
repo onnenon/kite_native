@@ -1,22 +1,11 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/emin93/react-native-template-typescript
- *
- * @format
- */
-
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 
-import Colors from "./colors";
+import Colors from "./assets/Colors";
 import Connect from "./components/connect/Connect";
 
-interface Props {}
-export default class App extends Component<Props> {
-  render() {
+export default class App extends Component {
+  public render() {
     return (
       <View style={styles.container}>
         <Connect />
@@ -27,19 +16,19 @@ export default class App extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: "center",
+    backgroundColor: Colors.darkGrey,
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: Colors.darkGrey
+  },
+  instructions: {
+    color: "#333333",
+    marginBottom: 5,
+    textAlign: "center",
   },
   welcome: {
     fontSize: 20,
+    margin: 10,
     textAlign: "center",
-    margin: 10
   },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
-  }
 });
