@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { string } from 'prop-types';
+import { string } from "prop-types";
+import React, { Component } from "react";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
-import Colors from '../../styles/colors';
+import Colors from "../../assets/Colors";
 
 export default class Connect extends Component {
   public constructor(props: any) {
@@ -15,13 +15,13 @@ export default class Connect extends Component {
 
   public updateHost = (host: string): void => {
     this.setState({ host });
-  };
+  }
 
   public updatePort = (port: string): void => {
     this.setState({ port });
-  };
+  }
 
-  render() {
+  public render() {
     return (
       <View style={styles.body}>
         <Text style={styles.heading}>Kite</Text>
@@ -29,14 +29,14 @@ export default class Connect extends Component {
         <TextInput
           style={styles.input}
           placeholder="Hostname"
-          onChangeText={host => this.updateHost(host)}
-          keyboardType={'url'}
+          onChangeText={(host) => this.updateHost(host)}
+          keyboardType={"url"}
         />
         <TextInput
           style={styles.input}
           placeholder="Port Number"
-          onChangeText={port => this.updatePort(port)}
-          keyboardType={'number-pad'}
+          onChangeText={(port) => this.updatePort(port)}
+          keyboardType={"number-pad"}
         />
         <Button onPress={() => this.forceUpdate} title="Connect" />
       </View>
@@ -47,24 +47,24 @@ export default class Connect extends Component {
 const styles = StyleSheet.create({
   body: {
     backgroundColor: Colors.darkGrey,
-    width: '60%',
+    width: "60%",
   },
   heading: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    paddingBottom: 20,
     color: Colors.offWhite,
-  },
-  input: {
-    borderRadius: 4,
-    padding: 5,
-    marginBottom: 10,
-    backgroundColor: Colors.offWhite,
-    fontSize: 14,
+    fontSize: 30,
+    fontWeight: "bold",
+    paddingBottom: 20,
   },
   info: {
+    color: Colors.offWhite,
     fontSize: 12,
     paddingBottom: 10,
-    color: Colors.offWhite,
+  },
+  input: {
+    backgroundColor: Colors.offWhite,
+    borderRadius: 4,
+    fontSize: 14,
+    marginBottom: 10,
+    padding: 5,
   },
 });
