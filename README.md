@@ -6,6 +6,7 @@ Project for learning some React Native goodness.
 [![codecov](https://codecov.io/gh/onnenon/kite_native/branch/master/graph/badge.svg)](https://codecov.io/gh/onnenon/kite_native)
 
 
+
 ## Things
 
 - [React Native](https://facebook.github.io/react-native/docs/0.59/getting-started)
