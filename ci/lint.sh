@@ -11,8 +11,9 @@ curl "$GITHUB_API/repos/$DRONE_REPO/statuses/$DRONE_COMMIT?access_token=$GITHUB_
   -H "Content-Type: application/json" \
   -X POST \
   -d "{\"state\": \"pending\", \"description\": \"The ESLint style checking is in progress\", \"target_url\": \"$DRONE_REMOTE_URL\", \"context\": \"$CI_CONTEXT\"}" \
+  > /dev/null
 
-# Run ESLint
+# Run TSLint
 yarn lint
 EXIT_CODE=$?
 
@@ -33,5 +34,6 @@ curl "$GITHUB_API/repos/$DRONE_REPO/statuses/$DRONE_COMMIT?access_token=$GITHUB_
   -H "Content-Type: application/json" \
   -X POST \
   -d "{\"state\": \"$STATUS\", \"description\": \"$DESCRIPTION\", \"target_url\": \"$DRONE_REMOTE_URL \", \"context\": \"$CI_CONTEXT\"}" \
+  > /dev/null
 
 exit 0 # don't make the build fail, just notify GitHub
