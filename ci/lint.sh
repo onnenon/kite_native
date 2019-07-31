@@ -2,7 +2,7 @@
 #! /bin/bash
 
 GITHUB_API=https://api.github.com
-CI_CONTEXT="stylechecker/eslint"
+CI_CONTEXT="stylechecker/tslint"
 
 # Notify GitHub stylechecking has started
 echo 'Starting ESLint...'
@@ -14,6 +14,7 @@ curl "$GITHUB_API/repos/$DRONE_REPO/statuses/$DRONE_COMMIT?access_token=$GITHUB_
   > /dev/null
 
 # Run TSLint
+yarn install
 yarn lint
 EXIT_CODE=$?
 
@@ -21,11 +22,11 @@ EXIT_CODE=$?
 if [ $EXIT_CODE -eq 0 ]
 then
   export STATUS="success"
-  export DESCRIPTION="No style issues"
+  export DESCRIPTION="TSLint found no style issues"
   echo $DESCRIPTION
 else
   export STATUS="failure"
-  export DESCRIPTION="ESLint found style issues"
+  export DESCRIPTION="TSLint found style issues"
   echo $DESCRIPTION
 fi
 
