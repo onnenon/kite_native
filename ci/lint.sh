@@ -18,7 +18,7 @@ yarn lint
 EXIT_CODE=$?
 
 # Notify GitHub according to ESLint exit code
-if [ $EXIT_CODE == 0 ]
+if [ $EXIT_CODE -eq 0 ]
 then
   export STATUS="success"
   export DESCRIPTION="No style issues"
