@@ -1,5 +1,5 @@
 /drone-eslint.sh
-#! /bin/sh
+#! /bin/bash
 
 GITHUB_API=https://api.github.com
 CI_CONTEXT="stylechecker/eslint"
@@ -18,7 +18,7 @@ yarn lint
 EXIT_CODE=$?
 
 # Notify GitHub according to ESLint exit code
-if [[ $EXIT_CODE == 0 ]]
+if [ $EXIT_CODE == 0 ]
 then
   export STATUS="success"
   export DESCRIPTION="No style issues"
