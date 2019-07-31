@@ -10,6 +10,14 @@ steps:
     - yarn build
     - yarn test && codecov
 
+- name: set-commit-status
+  image: gboo/github-status
+  environment:
+    GITHUB_TOKEN:
+      from_secret: github_token
+  state: success
+  context: drone/subtest
+
 - name: coverage
   image: plugins/codecov
   settings:
