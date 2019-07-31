@@ -34,7 +34,7 @@ curl "$GITHUB_API/repos/$DRONE_REPO/statuses/$DRONE_COMMIT?access_token=$GITHUB_
   -s \
   -H "Content-Type: application/json" \
   -X POST \
-  -d "{\"state\": \"$STATUS\", \"description\": \"$DESCRIPTION\", \"target_url\": \"$DRONE_REMOTE_URL \", \"context\": \"$CI_CONTEXT\"}" \
+  -d "{\"state\": \"$STATUS\", \"description\": \"$DESCRIPTION\", \"target_url\": \"$DRONE_BUILD_URL \", \"context\": \"$CI_CONTEXT\"}" \
   > /dev/null
 
 exit 0 # don't make the build fail, just notify GitHub
