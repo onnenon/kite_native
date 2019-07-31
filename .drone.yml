@@ -15,8 +15,8 @@ steps:
   environment:
     GITHUB_TOKEN:
       from_secret: github_token
-  state: success
-  context: drone/subtest
+    GITHUB_STATUS_STATE: success
+    GITHUB_STATUS_CONTEXT: drone/subtest
 
 - name: coverage
   image: plugins/codecov
