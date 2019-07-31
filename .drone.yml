@@ -3,8 +3,9 @@ name: default
 
 steps:
 - name: lint
-  image: node:10.16-alpine
+  image: node:10.16
   commands:
+    - yarn install
     - ./ci/lint.sh
 
 - name: test
