@@ -15,7 +15,7 @@ steps:
   environment:
     GITHUB_TOKEN:
       from_secret: github_token
-    GITHUB_STATUS_STATE: success
+    GITHUB_STATUS_STATE: error 
     GITHUB_STATUS_CONTEXT: drone/subtest
 
 - name: coverage
