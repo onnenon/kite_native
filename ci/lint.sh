@@ -1,5 +1,5 @@
 /drone-eslint.sh
-#! /bin/bash
+#! /bin/sh
 
 GITHUB_API=https://api.github.com
 CI_CONTEXT="stylechecker/eslint"
