@@ -28,10 +28,10 @@ else
   echo $DESCRIPTION
 fi
 
-curl "$GITHUB_API/repos/$CI_REPO/statuses/$CI_COMMIT?access_token=$GITHUB_TOKEN" \
+curl "$GITHUB_API/repos/$DRONE_REPO/statuses/$DRONE_COMMIT?access_token=$GITHUB_TOKEN" \
   -s \
   -H "Content-Type: application/json" \
   -X POST \
-  -d "{\"state\": \"$STATUS\", \"description\": \"$DESCRIPTION\", \"target_url\": \"$CI_BUILD_URL\", \"context\": \"$CI_CONTEXT\"}" \
+  -d "{\"state\": \"$STATUS\", \"description\": \"$DESCRIPTION\", \"target_url\": \"$DRONE_REMOTE_URL \", \"context\": \"$CI_CONTEXT\"}" \
 
 exit 0 # don't make the build fail, just notify GitHub

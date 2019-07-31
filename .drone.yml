@@ -7,6 +7,9 @@ steps:
   commands:
     - yarn install
     - ./ci/lint.sh
+  environment:
+    GITHUB_TOKEN:
+      from_secret: github_token
 
 - name: test
   image: node:10.16-alpine
