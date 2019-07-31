@@ -10,7 +10,7 @@ curl "$GITHUB_API/repos/$DRONE_REPO/statuses/$DRONE_COMMIT?access_token=$GITHUB_
   -s \
   -H "Content-Type: application/json" \
   -X POST \
-  -d "{\"state\": \"pending\", \"description\": \"The ESLint style checking is in progress\", \"target_url\": \"$DRONE_REMOTE_URL\", \"context\": \"$CI_CONTEXT\"}" \
+  -d "{\"state\": \"pending\", \"description\": \"The TSLint style checking is in progress\", \"target_url\": \"$DRONE_REMOTE_URL\", \"context\": \"$CI_CONTEXT\"}" \
   > /dev/null
 
 # Run TSLint
@@ -18,7 +18,7 @@ yarn install
 yarn lint
 EXIT_CODE=$?
 
-# Notify GitHub according to ESLint exit code
+# Notify GitHub according to TSLint exit code
 if [ $EXIT_CODE -eq 0 ]
 then
   export STATUS="success"
