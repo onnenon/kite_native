@@ -2,6 +2,11 @@ kind: pipeline
 name: default
 
 steps:
+- name: lint
+  image: node:10.16-alpine
+  commands:
+    - ./ci/lint.sh
+
 - name: test
   image: node:10.16-alpine
   commands:
@@ -9,14 +14,6 @@ steps:
     - yarn global add codecov
     - yarn build
     - yarn test && codecov
-
-- name: set-commit-status
-  image: gboo/github-status
-  environment:
-    GITHUB_TOKEN:
-      from_secret: github_token
-    GITHUB_STATUS_STATE: error 
-    GITHUB_STATUS_CONTEXT: drone/subtest
 
 - name: coverage
   image: plugins/codecov
