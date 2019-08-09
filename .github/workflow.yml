@@ -1,7 +1,10 @@
+name: Yarn Test
+on: [push]
+
 jobs:
   test:
     name: Run Yarn Tests
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
