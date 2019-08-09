@@ -4,5 +4,5 @@ workflow "New workflow" {
 }
 
 action "action.yml" {
-  uses = "./action.yml"
+  uses = ".github/action.yml"
 }
