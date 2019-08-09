@@ -2,7 +2,7 @@ import "react-native";
 import React, { Component } from "react";
 import Connect from "../Connect";
 
-describe("Connect", () => {
+describe('Connect', () => {
     const comp = new Connect({});
 
     beforeEach(() => {
